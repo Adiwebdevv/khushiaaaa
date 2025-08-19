@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Khushi!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #ffd6e0 0%, #e7fffe 100%);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .card {
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+      padding: 2.5em 2em;
+      text-align: center;
+      max-width: 350px;
+    }
+    h1 {
+      color: #ff69b4;
+      margin-bottom: 0.6em;
+      font-size: 2em;
+      animation: pop 1.2s;
+    }
+    @keyframes pop {
+      0% { transform: scale(0.8); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    p {
+      font-size: 1.12em;
+      color: #333;
+      margin: 1em 0;
+    }
+    .surprise-btn {
+      padding: 0.7em 1.8em;
+      border: none;
+      background: #ff69b4;
+      color: white;
+      border-radius: 18px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 1em;
+      font-weight: bold;
+      box-shadow: 0px 2px 14px #ff69b430;
+      transition: background 0.2s;
+    }
+    .surprise-btn:hover {
+      background: #ffb6c1;
+    }
+    .hidden {
+      display: none;
+    }
+    .confetti {
+      width: 100%;
+      height: 80px;
+      background: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') center/cover no-repeat;
+      margin: 1.2em auto 0.2em auto;
+      border-radius: 14px;
+      animation: fadeIn 1.2s;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .big-message {
+      color: #ff69b4;
+      font-size: 1.35em;
+      font-weight: bold;
+      margin-top: 1.1em;
+      animation: pop 1.2s;
+    }
+    .heart {
+      font-size: 2em;
+      animation: heartBeat 1s infinite;
+      color: #ff69b4;
+      display: inline-block;
+      margin: 0.5em 0;
+    }
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1);}
+      50% { transform: scale(1.2);}
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="welcome">
+    <h1>Happy Birthday (Pyare log) Didi ji !</h1>
+    <p>Hey Khushiaaaaaaaa, there's something special waiting for you...<br>
+    Are you ready for a surprise?</p>
+    <button class="surprise-btn" onclick="showSurprise()">Show Surprise</button>
+  </div>
+
+  <div class="card hidden" id="surprise">
+    <div class="confetti"></div>
+    <div class="heart">💖</div>
+    <div class="big-message">
+      Wishing you all the happiness, joy, and love!<br>
+      May your dreams come true and your smile never fades.<br>
+      You are truly precious! 🎂✨
+    </div>
+    <p>
+      Have a magical birthday, Bhnaaaa!<br>
+      <span style="color:#ff69b4;font-weight:bold;">Your surprise is YOU! You make every day brighter!</span>
+    </p>
+    <button class="surprise-btn" onclick="restart()">Replay Surprise</button>
+  </div>
+
+  <script>
+    function showSurprise() {
+      document.getElementById('welcome').classList.add('hidden');
+      document.getElementById('surprise').classList.remove('hidden');
+    }
+    function restart() {
+      document.getElementById('surprise').classList.add('hidden');
+      document.getElementById('welcome').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
